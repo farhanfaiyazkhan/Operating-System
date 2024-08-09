@@ -54,7 +54,7 @@ public:
 
         scheduler.pop();
         
-        for(m_ind=m_ind+1; m_ind<=m_clock && m_ind<m_n; ++m_ind)
+        for(m_ind=m_ind+1; m_arrival_time[m_ind]<=m_clock && m_ind<m_n; ++m_ind)
         {
             if (m_arrival_time[m_ind] <= m_clock)
             {
@@ -171,7 +171,7 @@ int main(int argv, char **argc)
     std::vector<int> arrival_time = {0, 1, 2, 3};
     std::vector<int> burst_time = {8, 4, 9, 5};
 
-    SJF_PREEMPTIVE sjf(4, arrival_time, burst_time);
+    SJF_NON_PREEMPTIVE sjf(4, arrival_time, burst_time);
 
     while (!sjf.m_executionComplete)
     {
