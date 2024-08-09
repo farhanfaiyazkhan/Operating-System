@@ -4,18 +4,19 @@
 class Priority_NON_PREEMPTIVE
 {
 protected:
-    std::vector<int> m_at;
-    std::vector<int> m_priority;
-    std::vector<int> m_ct;
-    std::vector<int> m_bt;
-    std::vector<int> m_tat;
-    std::vector<int> m_wt;
+
+    int m_n;				            // total number of processes
+	int m_clock;			            // clock
+	int m_lap;	                        // last arrived process
+    
+	std::vector<int> m_at;	            // arrival time
+    std::vector<int> m_priority;        // process priority 
+	std::vector<int> m_bt;	            // burst time
+	std::vector<int> m_ct;	            // completion time
+	std::vector<int> m_tat;             // turnaround time
+	std::vector<int> m_wt;	            // waiting time
 
     std::priority_queue<std::pair<int, int>> scheduler;
-
-    int m_n;
-    int m_clock;
-    int m_lap;
 
     void setCt(const int process, const int clock)
 	{
