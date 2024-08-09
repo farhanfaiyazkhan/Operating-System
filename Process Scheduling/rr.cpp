@@ -8,7 +8,7 @@ private:
 	int m_tq;				// time quantum
 	int m_clock;			// clock
 	int m_lap;				// last arrived process
-
+	
 	std::vector<int> m_at;	// arrival time
 	std::vector<int> m_bt;	// burst time
 	std::vector<int> m_rt;	// remaining time
