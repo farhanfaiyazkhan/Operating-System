@@ -43,11 +43,11 @@ int main (int argv, char** argc)
         {
                 if (i < 5)
                 {
-                        threads[i] = std::thread(reader, i);
+                        threads[i] = std::thread(writer, i);
                 }
                 else
                 {
-                        threads[i] = std::thread(writer, i);
+                        threads[i] = std::thread(reader, i);
                 }
         }
 
